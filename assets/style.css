@@ -1,0 +1,181 @@
+/* Irregular Verbs site — same identity as the app ("Cahier" theme, iosApp/iosApp/Design):
+   paper, faint blue rules, red margin line, Caveat (handwritten) for titles only, system font for text,
+   colour code of the three forms. Light and dark like the app (Palette.swift values).
+   The only font is self-hosted (no third-party requests), consistent with the privacy policy. */
+
+@font-face {
+  font-family: "Caveat";
+  src: url("fonts/Caveat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --paper: #faf7f0;
+  --surface: #fffdf8;
+  --surface-2: #f1ece1;
+  --ink: #1c1b1a;
+  --muted: #6b655c;
+  --line: #e4ddcf;
+  --rule: rgba(47, 111, 237, 0.17);
+  --margin: rgba(229, 72, 77, 0.55);
+  --accent: #2457c5;
+  --base: #2457c5;
+  --past: #a35a00;
+  --participle: #a3307d;
+  --todo-bg: #ffe0b2;
+  --todo-text: #7a3b00;
+  --rule-gap: 32px;
+  --radius: 16px;
+  --max: 720px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1a1917;
+    --surface: #24221f;
+    --surface-2: #2e2b27;
+    --ink: #f3eee4;
+    --muted: #a39c90;
+    --line: #3a3631;
+    --rule: rgba(127, 166, 255, 0.10);
+    --margin: rgba(255, 122, 126, 0.38);
+    --accent: #7fa6ff;
+    --base: #7fa6ff;
+    --past: #ffb766;
+    --participle: #f08bcb;
+    --todo-bg: #3a2a00;
+    --todo-text: #ffd27a;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  /* Notebook rules, scrolling with the page */
+  background-image: repeating-linear-gradient(to bottom, transparent 0 calc(var(--rule-gap) - 1px), var(--rule) calc(var(--rule-gap) - 1px) var(--rule-gap));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+h1, h2, h3, td { overflow-wrap: break-word; }
+h1 { hyphens: auto; -webkit-hyphens: auto; }
+a:focus-visible, .button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Page column with the red margin line at its left, like the app's notebook page */
+.wrap {
+  position: relative;
+  max-width: var(--max);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 24px 0 44px;
+}
+.wrap::before {
+  content: "";
+  position: absolute; top: 0; bottom: 0; left: 22px;
+  width: 2px; background: var(--margin);
+}
+
+.hand { font-family: "Caveat", "Comic Sans MS", cursive; font-weight: 700; }
+
+header.site {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px;
+  padding: 18px 0 6px;
+}
+.brand {
+  font-family: "Caveat", cursive; font-weight: 700; font-size: 32px; line-height: 1.1;
+  color: var(--ink); text-decoration: none;
+}
+nav.site a { color: var(--muted); text-decoration: none; margin-left: 14px; font-size: 15px; }
+nav.site a:first-child { margin-left: 0; }
+nav.site a:hover, nav.site a[aria-current="page"] { color: var(--ink); }
+
+nav.langs { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0 8px; }
+nav.langs a {
+  font-size: 13px; font-weight: 600; letter-spacing: .04em; text-decoration: none;
+  color: var(--muted); border: 1px solid var(--line); background: var(--surface);
+  border-radius: 999px; padding: 2px 10px;
+}
+nav.langs a:hover { color: var(--ink); }
+nav.langs a[aria-current="true"] { color: var(--surface); background: var(--ink); border-color: var(--ink); }
+
+/* Landing */
+.hero { padding: 28px 0 8px; }
+.hero h1 {
+  font-family: "Caveat", cursive; font-weight: 700;
+  font-size: clamp(46px, 12vw, 68px); line-height: 1; margin: 0 0 14px;
+}
+.hero p.lead { color: var(--muted); font-size: 19px; margin: 0 0 24px; }
+
+.verb-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 20px 18px; margin: 0 0 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+.verb-card .word { font-family: "Caveat", cursive; font-weight: 700; font-size: 46px; line-height: 1; margin: 0 0 10px; }
+.verb-card dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0; }
+.verb-card dl > div { display: flex; flex-direction: column; }
+.verb-card dt {
+  flex: 1; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.verb-card dd { margin: 0; font-size: 26px; font-weight: 800; }
+.verb-card .base { color: var(--base); }
+.verb-card .past { color: var(--past); }
+.verb-card .participle { color: var(--participle); }
+
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 10px 26px; border-radius: 999px;
+  font-weight: 700; font-size: 17px; text-decoration: none;
+  background: var(--ink); color: var(--paper);
+}
+
+.pricing {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 20px; margin: 28px 0;
+}
+.pricing h2 { font-family: "Caveat", cursive; font-size: 30px; line-height: 1.1; margin: 0 0 8px; }
+.pricing ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.pricing li { margin: 4px 0; }
+.pricing strong { color: var(--ink); }
+
+.features { display: grid; gap: 12px; margin: 24px 0 40px; }
+@media (min-width: 560px) { .features { grid-template-columns: 1fr 1fr; } }
+.feature { background: var(--surface); border-radius: var(--radius); padding: 16px 18px; border: 1px solid var(--line); }
+.feature h3 { font-family: "Caveat", cursive; font-size: 27px; line-height: 1.1; margin: 0 0 6px; }
+.feature p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Legal pages */
+main.doc { padding: 12px 0 48px; }
+main.doc h1 { font-family: "Caveat", cursive; font-weight: 700; font-size: clamp(40px, 10vw, 52px); line-height: 1.05; margin: 8px 0 6px; }
+main.doc .updated { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+main.doc h2 { font-family: "Caveat", cursive; font-weight: 700; font-size: 30px; line-height: 1.15; margin: 34px 0 6px; }
+main.doc h3 { font-size: 17px; margin: 22px 0 4px; }
+main.doc ul { padding-left: 22px; }
+main.doc li { margin: 4px 0; }
+.note {
+  background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--margin);
+  padding: 12px 16px; border-radius: 8px; margin: 16px 0; font-size: 15px;
+}
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; background: var(--surface); }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.table-scroll { overflow-x: auto; }
+
+/* Placeholders the owner must fill in before publishing (see site/README.md) */
+.todo { background: var(--todo-bg); color: var(--todo-text); padding: 0 4px; border-radius: 4px; }
+
+footer.site {
+  border-top: 1px solid var(--line); padding: 20px 0 40px; color: var(--muted); font-size: 14px;
+}
+footer.site nav a { color: var(--muted); margin-right: 14px; text-decoration: none; display: inline-block; margin-bottom: 6px; }
+footer.site nav a:hover { color: var(--ink); }
+footer.site p { margin: 8px 0 0; }
+
+@media (max-width: 420px) {
+  .wrap { padding: 0 16px 0 38px; }
+  .wrap::before { left: 18px; }
+  .verb-card dd { font-size: 22px; }
+}
