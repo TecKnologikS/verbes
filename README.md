@@ -22,9 +22,9 @@ Chaque champ est marqué `[À compléter : …]` (fond orange) dans les pages, d
 
 - [x] Éditeur et contact : TecKnologikS, support@tecknologiks.com, comme le site de Trente30 (sans adresse, téléphone ni SIREN).
 - [ ] Dates de mise à jour (confidentialité, conditions).
-- [ ] Prix de « Supprimer les pubs » (présentation).
-- [ ] Base légale des pubs non personnalisées (confidentialité section 4) : décision à valider.
-- [ ] Section « Enfants » de la confidentialité : public visé, âge minimum, classement d'âge App Store, traitement des pubs pour les mineurs (réglages AdMob) : décision à valider.
+- [x] Prix de « Supprimer les pubs » : 2,99 € (présentation).
+- [x] Base légale des pubs non personnalisées : intérêt légitime (art. 6.1.f du RGPD), validé par Robin le 19/11/2026.
+- [x] Section « Enfants » : app non destinée aux moins de 13 ans, validé par Robin le 19/11/2026.
 - [ ] Nom de l'app dans chaque langue : le site dit « Irregular Verbs » en anglais, allemand, espagnol, italien et portugais, et « Verbes Irréguliers » en français. Vérifier les noms des fiches App Store localisées.
 - [ ] Badge officiel « Download on the App Store » d'Apple (règles marketing d'Apple, fichier à héberger dans `assets/`) à la place du bouton texte.
 - [ ] Portugais : le chemin des réglages de suivi d'iOS est donné de façon générale (« Definições do iOS, em Privacidade e segurança ») faute de libellé exact vérifié.
