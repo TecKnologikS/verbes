@@ -21,7 +21,7 @@ Identité visuelle reprise de l'app (thème « Cahier », `iosApp/iosApp/Design/
 Chaque champ est marqué `[À compléter : …]` (fond orange) dans les pages, dans les 6 langues.
 
 - [x] Éditeur et contact : TecKnologikS, support@tecknologiks.com, comme le site de Trente30 (sans adresse, téléphone ni SIREN).
-- [ ] Dates de mise à jour (confidentialité, conditions).
+- [x] Dates de mise à jour : 19 novembre 2026 (confidentialité, conditions).
 - [x] Prix de « Supprimer les pubs » : 2,99 € (présentation).
 - [x] Base légale des pubs non personnalisées : intérêt légitime (art. 6.1.f du RGPD), validé par Robin le 19/11/2026.
 - [x] Section « Enfants » : app non destinée aux moins de 13 ans, validé par Robin le 19/11/2026.
