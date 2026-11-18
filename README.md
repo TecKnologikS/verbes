@@ -20,9 +20,7 @@ Identité visuelle reprise de l'app (thème « Cahier », `iosApp/iosApp/Design/
 
 Chaque champ est marqué `[À compléter : …]` (fond orange) dans les pages, dans les 6 langues.
 
-- [ ] Éditeur : nom ou raison sociale, adresse, téléphone, SIREN/RCS si société, directeur de la publication (mentions légales, confidentialité section 1, pied de page de toutes les pages).
-- [ ] Téléphone de l'hébergeur GitHub (mentions légales, exigé par la LCEN).
-- [ ] Adresse e-mail de contact / support / données personnelles (support, confidentialité sections 1 et 6, mentions légales).
+- [x] Éditeur et contact : TecKnologikS, support@tecknologiks.com, comme le site de Trente30 (sans adresse, téléphone ni SIREN).
 - [ ] Dates de mise à jour (confidentialité, conditions).
 - [ ] Prix de « Supprimer les pubs » (présentation).
 - [ ] Base légale des pubs non personnalisées (confidentialité section 4) : décision à valider.
